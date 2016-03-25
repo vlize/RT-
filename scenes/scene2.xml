@@ -1,0 +1,180 @@
+<scene name="Scene 2">
+	<parameters>
+		<resolution x="1024" y="768"/>
+		<background value= "000000"/>
+		<ambient value="20%"/>
+		<anti-aliasing value="0"/>
+		<shadow set="on"/>
+		<camera>
+			<crd x="-1500" y="0" z="0"/>
+			<rotation x="0" y="0" z="0"/>
+		</camera>
+	</parameters>
+
+	<!--          TEXTURES          -->
+	<!--            LIST            -->
+
+	<textures>
+		<item id="1">
+			<type>img<type/>
+			<file>./texture/world.xpm<file/>
+		<item/>
+
+		<item id="2">
+			<type>proc<type/>
+			<name value="checker"/>
+		<item/>
+	<textures/>
+
+<!--          MATERIALS         -->
+<!--            LIST            -->
+
+<!-- red, with specular -->
+	<materials>
+		<item id="1">
+			<specular value="50"/>
+			<reflection value="50%"/>
+			<color value="FF3333"/>
+			<transparency value="0%"/>
+			<refraction value="0"/>
+			<texture value="2"/>
+		</item>
+
+<!-- green, with specular -->
+		<item id="2">
+			<specular value="50"/>
+			<reflection value="0%"/>
+			<transparency value="0%"/>
+			<refraction value="0"/>
+			<color value="99FF33"/>
+		</item>
+
+<!-- blue, with specular -->
+		<item id="3">
+			<specular value="0"/>
+			<reflection value="0%"/>
+			<transparency value="0%"/>
+			<refraction value="0"/>
+			<color value="0099FF"/>
+		</item>
+
+<!-- yellow, with specular -->
+		<item id="4">
+			<specular value="50"/>
+			<reflection value="0%"/>
+			<transparency value="0%"/>
+			<refraction value="0"/>
+			<color value="FFFF33"/>
+		</item>
+
+<!-- orange, with specular -->
+		<item id="5">
+			<specular value="50"/>
+			<reflection value="0%"/>
+			<transparency value="0%"/>
+			<refraction value="0"/>
+			<color value="FF9933"/>
+		</item>
+
+<!-- purple, glass, with specular -->
+		<item id="6">
+			<specular value="50"/>
+			<reflection value="0%"/>
+			<transparency value="40%"/>
+			<refraction value="120%"/>
+			<color value="9933FF"/>
+		</item>
+
+<!-- pure mirror, with specular -->
+		<item id="7">
+			<specular value="50"/>
+			<reflection value="100%"/>
+			<transparency value="0%"/>
+			<refraction value="100%"/>
+			<color value="000000"/>
+		</item>
+
+	</materials>
+
+<!--          LIGHTS           -->
+<!--           LIST            -->
+
+	<lights>
+
+		<item id="1">
+			<type value="0"/>
+			<crd x="-1000" y="500" z="1500"/>
+			<intensity value="100"/>
+		</item>
+
+<!--#
+		<item id="2">
+			<type value="0"/>
+			<crd x="1000" y="-500" z="1500"/>
+			<intensity value="100"/>
+		</item>
+#-->
+	</lights>
+
+	<!--          OBJECTS           -->
+	<!--           LIST             -->
+
+	<objects>
+
+		<item id="1">
+			<type value="1"/>
+			<crd x="-200" y="100" z="-150"/>
+			<rotation x="0" y="0" z="0"/>
+			<radius value="15"/>
+			<material value="3"/>
+		</item>
+<!--#
+		<item id="2">
+			<type value="2"/>
+			<crd x="-200" y="-20" z="0"/>
+			<rotation x="0" y="0" z="0"/>
+			<radius value="20"/>
+			<material value="3"/>
+		</item>
+
+		<item id="3">
+			<type value="3"/>
+			<crd x="200" y="0" z="0"/>
+			<rotation x="0" y="0" z="0"/>
+			<radius value="75"/>
+			<material value="2"/>
+		</item>
+#-->
+		<csg id="4">
+			<scale value="100%">
+			<crd x="-1000" y="-150" z="0"/>
+			<rotation x="0" y="0" z="0"/>
+			<tree type="1">
+<!--#
+#-->
+				<fork1 type="0">
+					<item>
+						<type value="2"/>
+						<crd x="0" y="0" z="0"/>
+						<rotation x="0" y="0" z="0"/>
+						<radius value="60"/>
+						<material value="4"/>
+					</item>
+				</fork1>
+				<fork2 type="0">
+					<item>
+						<type value="1"/>
+						<crd x="0" y="0" z="-5"/>
+						<rotation x="100" y="0" z="0"/>
+						<radius value="15"/>
+						<material value="5"/>
+					</item>
+
+				</fork2>
+<!--#
+#-->
+			</tree>
+		</csg>
+
+	</objects>
+</scene>
